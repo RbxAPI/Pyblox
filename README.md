@@ -13,7 +13,7 @@ developers to look into the codebase to better understand this wrapper and what 
 
 If you would like to contribute, create a pull request with the changes you made. If you have a complaint, issue or problem, create an issue and I will try to answer as fast as I can. 
 
-For user's wanting a Python 2x-compatible version: https://github.com/Sanjay-B/Pyblox/tree/python2
+For user's wanting a Python 2x-compatible version: https://github.com/RbxAPI/Pyblox/tree/python2
 
 ### Updating
 
@@ -52,7 +52,7 @@ GetAllFriends() # Calls "GetAllFriends" method
 - ``pip install requests``
 
 *note: requests may have been already installed.*
-*python 2x version can be found https://github.com/Sanjay-B/Pyblox/tree/python2*
+*python 2x version can be found https://github.com/RbxAPI/Pyblox/tree/python2*
 
 ## Related Projects
 https://github.com/sentanos/roblox-js
