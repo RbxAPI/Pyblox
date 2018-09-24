@@ -12,7 +12,7 @@ import json
 
 class Assets:
 
-    def getPackageAssets(assetid):
+    def PackageAsset(assetid):
         a = Http.sendRequest("https://www.roblox.com/Game/GetAssetIdsForPackageId?packageId=" + str(assetid))
         result = []
         for part in a:
@@ -34,7 +34,7 @@ class Assets:
 
     # GET https://api.roblox.com/Marketplace/ProductInfo?assetId={assetId}
     # Returns Table/Array + Attributes
-    def getAssetInfo(assetid):
+    def Asset(assetid):
         c = Http.sendRequest("https://api.roblox.com/Marketplace/ProductInfo?assetId=" + str(assetid))
         b = c.decode("utf-8")
         a = json.loads(b)
@@ -66,7 +66,7 @@ class Assets:
 
     # GET https://www.roblox.com/studio/plugins/info?assetId={assetId}
     # Returns Table/Array
-    def getAssetVersions(assetid):
+    def AssetVersions(assetid):
         a = Http.sendRequest("https://www.roblox.com/studio/plugins/info?assetId=" + str(assetid))
         result = []
         for part in a:
