@@ -2,3 +2,4 @@ requests
 aiohttp
 cchardet
 aiodns
+beautifulsoup4
