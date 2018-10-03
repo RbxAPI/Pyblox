@@ -2,4 +2,4 @@ requests
 aiohttp
 cchardet
 aiodns
-beautifulsoup4
+beautifulsoup4==4.6.3
