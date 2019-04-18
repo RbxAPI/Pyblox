@@ -6,7 +6,7 @@
 #  Copyright © 2017 Sanjay-B(Sanjay Bhadra). All rights reserved.
 #
 
-from req import Http
+from .http import Http
 from bs4 import *
 import html5lib
 import urllib.request
@@ -61,10 +61,3 @@ class Groups:
     def getUserRole(groupid, userid):
         a = Http.sendRequest(f"https://www.roblox.com/Game/LuaWebService/HandleSocialRequest.ashx?method=GetGroupRole&playerid={userid}&groupId={groupid}")
         return a
-
-
-
-
-
-
-    
