@@ -6,7 +6,7 @@
 #  Copyright © 2017 Sanjay-B(Sanjay Bhadra). All rights reserved.
 #
 
-from .http import Http
+from req import Http
 from bs4 import *
 import html5lib
 import urllib.request
@@ -41,11 +41,30 @@ class Groups:
     # GET /groups/{groupId}/allies
     # Returns Table/Array with each ally's attributes
     def getGroupAllies(groupid):
-        a = Http.sendRequest("https://api.roblox.com/groups/" + str(groupid) + "allies")
+        a = Http.sendRequest("https://api.roblox.com/groups/" + str(groupid) + "/allies")
         return a
 
     # GET /groups/{groupId}/enemies
     # Returns Table/Array with each enemy's attributes
     def getGroupEnemies(groupid):
-        a = Http.sendRequest("https://api.roblox.com/groups/" + str(groupid) + "enemies")
+        a = Http.sendRequest("https://api.roblox.com/groups/" + str(groupid) + "/enemies")
         return a
+
+    # GET /groups/{groupId}/roles
+    # Returns a Table/Array with each role.
+    def getGroupRoles(groupid):
+        a = Http.sendRequest("https://groups.roblox.com/v1/groups/" + str(groupid) + "/roles")
+        return a
+
+    # GET /Game/LuaWebService/HandleSocialRequest.ashx
+    # Returns String with role name.
+    def getUserRole(groupid, userid):
+        a = Http.sendRequest(f"https://www.roblox.com/Game/LuaWebService/HandleSocialRequest.ashx?method=GetGroupRole&playerid={userid}&groupId={groupid}")
+        return a
+
+
+
+
+
+
+    
