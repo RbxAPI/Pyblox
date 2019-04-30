@@ -1,5 +1,0 @@
-requests
-aiohttp
-cchardet
-aiodns
-beautifulsoup4==4.6.3
