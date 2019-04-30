@@ -10,7 +10,7 @@ __title__ = 'pyblox'
 __author__ = 'Sanjay-B'
 __license__ = 'MIT'
 __copyright__ = 'Copyright © 2018- Sanjay-B(Sanjay Bhadra)'
-__version__ = '0.3.0'
+__version__ = '3.1.0'
 
 # Dependencies
 
