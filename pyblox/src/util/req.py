@@ -6,7 +6,8 @@
 #  Copyright © 2019- Sanjay-B(Sanjay Bhadra). All rights reserved.
 #
 
-import requests
+import asyncio
+import requests_async as requests
 import json
 import browser_cookie3
 from .strings import Strings
@@ -15,10 +16,10 @@ cookies = list(browser_cookie3.chrome())
 
 class Req:
 
-	def getAllCookies():
+	async def getAllCookies():
 		#return cookies
 		session = requests.Session()
-		response = session.get("https://www.roblox.com/home")
+		response = await session.get("https://www.roblox.com/home")
 		print(session.cookies.get_dict())
 
 
@@ -65,13 +66,14 @@ class Req:
 		# Once again, this works as a shorthand:
 		response = Req.request(t="POST",url"http://httpbin.org/post",payload=data)[0]
 	'''
-	def request(t=str,url=str,*args,**kwargs):
+
+	async def request(t=str,url=str,*args,**kwargs):
 		payload = kwargs.get('payload',None)
 		header = kwargs.get('header',None)
 		cookies = kwargs.get('cookies',None)
 		
 		if t == "GET" and url:
-			request = requests.get(str(url))
+			request = await requests.get(str(url))
 			statusCode = request.status_code
 			content = request.content
 			headers = request.headers
@@ -82,11 +84,11 @@ class Req:
 		elif t == "POST" and url and payload:
 			request = None
 			if header and not cookies:
-				request = requests.post(str(url),data=payload,headers=header)
+				request = await requests.post(str(url),data=payload,headers=header)
 			elif not header and not cookies:
-				request = requests.post(str(url),data=payload)
+				request = await requests.post(str(url),data=payload)
 			elif header and cookies:
-				request = requests.post(str(url),data=payload,headers=header,cookies=cookies)
+				request = await requests.post(str(url),data=payload,headers=header,cookies=cookies)
 
 			statusCode = request.status_code
 			content = request.content
@@ -96,7 +98,7 @@ class Req:
 			return statusCode,content,headers,encoding,json
 
 		elif t == "BLANK_POST":
-			request = requests.post(str(url),headers=header)
+			request = await requests.post(str(url),headers=header)
 			statusCode = request.status_code
 			content = request.content
 			headers = request.headers
@@ -108,7 +110,7 @@ class Req:
 			pass
 
 		elif t == "PATCH" and url and payload:
-			request = requests.patch(str(url),data=payload)
+			request = await requests.patch(str(url),data=payload)
 			statusCode = request.status_code
 			content = request.content
 			headers = request.headers
@@ -116,5 +118,11 @@ class Req:
 			json = request.json()
 			return statusCode,content,headers,encoding,json
 
-
-		#request2 = requests.post('https://groups.roblox.com/v1/groups/4658962/wall/posts',data={"body":"Final2"},headers=cache2,cookies=cookies)
+		elif t == "DEL" and url:
+			request = await requests.delete(str(url),headers=header,cookies=cookies)
+			statusCode = request.status_code
+			content = request.content
+			headers = request.headers
+			encoding = request.encoding
+			json = request.json()
+			return statusCode,content,headers,encoding,json
