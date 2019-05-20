@@ -14,3 +14,4 @@
 from .req import Req
 from .strings import Strings
 from .jsoni import Jsoni
+from .cached import Cached
