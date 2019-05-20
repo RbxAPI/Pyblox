@@ -36,6 +36,3 @@ class Jsoni:
 		print(file_string[:27])
 
 
-
-
-
