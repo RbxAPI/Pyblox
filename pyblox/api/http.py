@@ -5,7 +5,7 @@
 #  By Sanjay-B(Sanjay Bhadra)
 #  Copyright © 2017 Sanjay-B(Sanjay Bhadra). All rights reserved.
 #
-
+import logging
 import requests
 
 
@@ -18,7 +18,7 @@ class Http:
         statusCode = payload.status_code
         content = payload.content
         if statusCode is not 200:
-            return print("[Pyblox][GET] Something went wrong. Error: " + statusCode)
+            return logging.error(f"[Pyblox][GET] Something went wrong. Error: {statusCode}")
         return content
 
     # POST Request
@@ -28,5 +28,5 @@ class Http:
         statusCode = payload.status_code
         content = payload.content
         if statusCode is not 200:
-            return print("[Pyblox][POST] Something went wrong. Error: " + statusCode)
+            return logging.error(f"[Pyblox][POST] Something went wrong. Error: {statusCode}")
         return content
