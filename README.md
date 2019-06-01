@@ -41,7 +41,7 @@ from pyblox3 import Friends # Imports the Friends class from pyblox wrapper
 
 def GetAllFriends():
 	CoolPeople = Friends.friendList(1) # Takes your userid
-	print(CoolPeople) # Returns usernames and prints them on console
+	print(CoolPeople) # Returns usernames and prints them in the console
 
 GetAllFriends() # Calls "GetAllFriends" method
 ```
@@ -52,12 +52,35 @@ GetAllFriends() # Calls "GetAllFriends" method
 - ``pip install requests``
 
 *note: requests may have been already installed.*
-*python 2x version can be found https://github.com/RbxAPI/Pyblox/tree/python2*
 
 ## Related Projects
-https://github.com/sentanos/roblox-js
-https://github.com/CrescentCode/RobloxCommunication
-https://github.com/NoahCristino/robloxlib
-https://github.com/winfamy/nodeblox
-https://github.com/gamenew09/RobloxAPI
-https://github.com/NevermoreFramework/Nevermore
+*https://github.com/iranathan/robloxapi*
+
+*https://github.com/NoahCristino/robloxlib*
+
+*https://github.com/sentanos/roblox-js*
+
+*https://github.com/MartinRBX/bloxy*
+
+*https://github.com/suufi/noblox.js*
+
+*https://github.com/gamenew09/RobloxAPI*
+
+*https://github.com/RbxAPI/Javablox*
+
+*https://github.com/PizzaCrust/Roblox4j*
+
+*https://github.com/PizzaCrust/KotlinRoblox*
+
+*https://github.com/FreeLineTM/roblox.kt*
+
+*https://github.com/NevermoreFramework/Nevermore*
+
+*https://github.com/Meqolo/cblox*
+
+*https://github.com/CrescentCode/RobloxCommunication*
+
+*https://github.com/OliverHensworth/roblox.lua/*
+
+*https://github.com/OliverHensworth/roblox.rb*
+
