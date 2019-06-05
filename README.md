@@ -9,6 +9,8 @@ The purpose of this API wrapper is to expose Roblox's API for third party use an
 This is the first stable Python API wrapper for the Roblox API. Documentation can be found within each module. I encourage
 developers to look into the codebase to better understand this wrapper and what it can truly offer. 
 
+Supports async-compatiblity while keeping memory & network usage low. 
+
 This is incredibly unstable but will replace ``master`` once it's stable enough for full release. 
 This is intended to be ``v3.x.x`` and beyond. Please be aware that there are breaking changes in design
 and will not be compatible w/ any versions prior. 
