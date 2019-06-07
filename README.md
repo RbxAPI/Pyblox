@@ -13,8 +13,8 @@ developers to look into the codebase to better understand this wrapper and what 
 
 If you would like to contribute, create a pull request with the changes you made. If you have a complaint, issue or problem, create an issue and I will try to answer as fast as I can. 
 
-For user's wanting a Python 2x-compatible version: https://github.com/RbxAPI/Pyblox/tree/python2
-
+For users wanting a Python 2x-compatible version: https://github.com/RbxAPI/Pyblox/tree/python2
+For users wanting a mid-stable, asynchronous-version: https://github.com/RbxAPI/Pyblox/tree/nightly_build
 ### Updating
 
 The Roblox API updates whenever necessary and often the developers don't specify when or why these changes are taking place.
@@ -83,4 +83,3 @@ GetAllFriends() # Calls "GetAllFriends" method
 *https://github.com/OliverHensworth/roblox.lua/*
 
 *https://github.com/OliverHensworth/roblox.rb*
-
