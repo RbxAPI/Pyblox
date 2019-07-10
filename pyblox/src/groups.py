@@ -8,6 +8,7 @@
 
 from .util import *
 import json
+from bs4 import BeautifulSoup
 
 root = "https://groups.roblox.com"
 
@@ -91,7 +92,25 @@ class Groups_v1:
 			elif response[0] == 400:
 				print("The user is invalid or does not exist")
 
-
+		async def getJoinRequests(**kwargs):
+			groupid = kwargs.get('groupid', None)
+			response = await Req.request(t='GET', url='https://www.roblox.com/groups/'+str(groupid)+'/joinrequests-html?pageNum=1')
+			soup = BeautifulSoup(response[1], 'html.parser')
+			tr = soup.find('tbody').find_all('tr')
+			del tr[-1]
+			requests = []
+			for request in tr:
+				requests.append({
+					'JoinId': request.find('span', {"class": "btn-control btn-control-medium accept-join-request"})[
+						'data-rbx-join-request'],
+					'User': {
+						'AvatarPicture': request.td.span.img['src'],
+						'Username': request.find('a').text,
+						'Id': re.findall(r'\b\d+\b', request.find('a')['href']),
+						'ProfileLink': request.find('a')['href']
+					}
+				})
+			return requests
 		#def claimOwnership(): # Requires token validation
 		#def join(): # Requires token validation
 		#def exile(): # Requires token validation
