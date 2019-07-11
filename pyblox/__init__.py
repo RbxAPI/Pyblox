@@ -16,5 +16,5 @@ __version__ = '0.2.4'
 from .api.assets import Assets 
 from .api.http import Http 
 from .api.friends import Friends 
-from .api.user import User
+from .api.user import Users
 from .api.groups import Groups
