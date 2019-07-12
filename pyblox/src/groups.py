@@ -99,7 +99,7 @@ class Groups_v1:
 			tr = soup.find('tbody').find_all('tr')
 			del tr[-1]
 			requests = []
-			for request in tr:
+			async for request in tr:
 				requests.append({
 					'JoinId': request.find('span', {"class": "btn-control btn-control-medium accept-join-request"})[
 						'data-rbx-join-request'],
@@ -111,6 +111,26 @@ class Groups_v1:
 					}
 				})
 			return requests
+
+		async def declineJoinRequest(**kwargs):
+			requestid = kwargs.get('requestid', None)
+			url = 'https://www.roblox.com/group/handle-join-request'
+			data = {
+				'groupJoinRequestId': requestid,
+				'accept': False
+			}
+			response = await Req.request(t='POST', url=url, payload=data)
+			return response[0]
+
+		async def acceptJoinRequest(**kwargs):
+			requestid = kwargs.get('requestid', None)
+			url = 'https://www.roblox.com/group/handle-join-request'
+			data = {
+				'groupJoinRequestId': requestid,
+				'accept': False
+			}
+			response = await Req.request(t='POST', url=url, payload=data)
+			return response[0]
 		#def claimOwnership(): # Requires token validation
 		#def join(): # Requires token validation
 		#def exile(): # Requires token validation

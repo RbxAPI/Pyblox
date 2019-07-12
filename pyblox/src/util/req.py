@@ -10,9 +10,12 @@ import asyncio
 import requests_async as requests
 import json
 import browser_cookie3
-from .strings import Strings
+# from .strings import Strings
 
-cookies = list(browser_cookie3.chrome())
+try:
+	cookies = list(browser_cookie3.chrome())
+except browser_cookie3.BrowserCookieError:
+	print('Unable to get cookies.')
 
 class Req:
 
