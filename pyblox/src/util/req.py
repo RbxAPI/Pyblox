@@ -69,7 +69,7 @@ class Req:
 
 	async def request(t=str,url=str,*args,**kwargs):
 		payload = kwargs.get('payload',None)
-		header = kwargs.get('header',None)
+		header = kwargs.get('header',{})
 		cookies = kwargs.get('cookies',None)
 
 		if t == "GET" or "POST" or "PATCH" or "DEL":
