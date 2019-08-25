@@ -10,9 +10,12 @@ import asyncio
 import requests_async as requests
 import json
 import browser_cookie3
-from .strings import Strings
+# from .strings import Strings
 
-cookies = list(browser_cookie3.chrome())
+try:
+	cookies = list(browser_cookie3.chrome())
+except browser_cookie3.BrowserCookieError:
+	print('Unable to get cookies.')
 
 class Req:
 
@@ -69,35 +72,28 @@ class Req:
 
 	async def request(t=str,url=str,*args,**kwargs):
 		payload = kwargs.get('payload',None)
-		header = kwargs.get('header',None)
+		header = kwargs.get('header',{})
 		cookies = kwargs.get('cookies',None)
-		
-		if t == "GET" and url:
-			request = await requests.get(str(url))
+
+		if t == "GET" or "POST" or "PATCH" or "DEL":
+			method = t.replace('DEL', 'delete')
+			request = await requests.request(method, str(url), data=payload or None, headers=header, cookies=cookies or {})
 			statusCode = request.status_code
 			content = request.content
 			headers = request.headers
 			encoding = request.encoding
 			json = request.json()
-			return statusCode,content,headers,encoding,json
 
-		elif t == "POST" and url and payload:
-			request = None
-			if header and not cookies:
-				request = await requests.post(str(url),data=payload,headers=header)
-			elif not header and not cookies:
-				request = await requests.post(str(url),data=payload)
-			elif header and cookies:
-				request = await requests.post(str(url),data=payload,headers=header,cookies=cookies)
+			# resend request with xcsrf token
+			if statusCode == 403 and 'X-CSRF-TOKEN' in headers:
+				kwargs['headers']['X-CSRF-TOKEN'] = headers['X-CSRF-TOKEN']
+				return request(t=t, url=url, *args, **kwargs)
 
-			statusCode = request.status_code
-			content = request.content
-			headers = request.headers
-			encoding = request.encoding
-			json = request.json()
-			return statusCode,content,headers,encoding,json
+			# if there is no xcsrf token in reponse headers or it is not required then return the response
+			return statusCode, content, headers, encoding, json
 
-		elif t == "BLANK_POST":
+
+		elif t == 'BLANK_POST':
 			request = await requests.post(str(url),headers=header)
 			statusCode = request.status_code
 			content = request.content
@@ -109,20 +105,3 @@ class Req:
 		elif t == "DOUBLE_POST":
 			pass
 
-		elif t == "PATCH" and url and payload:
-			request = await requests.patch(str(url),data=payload)
-			statusCode = request.status_code
-			content = request.content
-			headers = request.headers
-			encoding = request.encoding
-			json = request.json()
-			return statusCode,content,headers,encoding,json
-
-		elif t == "DEL" and url:
-			request = await requests.delete(str(url),headers=header,cookies=cookies)
-			statusCode = request.status_code
-			content = request.content
-			headers = request.headers
-			encoding = request.encoding
-			json = request.json()
-			return statusCode,content,headers,encoding,json
