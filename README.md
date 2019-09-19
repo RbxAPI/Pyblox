@@ -22,7 +22,7 @@ If you would like to contribute, create a pull request with the changes you made
 
 - Python 3+
 
-*note: requests may have been already installed.*
+*note: requirements should be installed automatically*
 
 ## Related Projects
 https://github.com/sentanos/roblox-js
