@@ -23,11 +23,3 @@ If you would like to contribute, create a pull request with the changes you made
 - Python 3+
 
 *note: requirements should be installed automatically*
-
-## Related Projects
-https://github.com/sentanos/roblox-js
-https://github.com/CrescentCode/RobloxCommunication
-https://github.com/NoahCristino/robloxlib
-https://github.com/winfamy/nodeblox
-https://github.com/gamenew09/RobloxAPI
-https://github.com/NevermoreFramework/Nevermore
