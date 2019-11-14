@@ -143,6 +143,7 @@ class Groups_v1:
 			}
 			response = await Req.request(t='POST', url=url, payload=data)
 			return response[0]
+
 		#def claimOwnership(): # Requires token validation
 		#def join(): # Requires token validation
 		#def exile(): # Requires token validation
@@ -201,7 +202,18 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
-		#def get(): # Doesn't work for some reason
+		async def get(self,**kwargs):
+			groupid = self.Groups_v1.groupid
+			rolesetid = kwargs.get("rolesetid",None)
+			response = await Req.request(t="GET",url=root+"/v1/groups/"+str(groupid)+"/roles/"+str(rolesetid)+"/permissions")
+			if response[0] == 200:
+				return json.loads(response[1].decode('utf-8'))
+			elif response[0] == 400:
+				print("Group or rolesetid is invalid or does not exist")
+			elif response[0] == 401:
+				print("Authorization has been denied for this request")
+			elif response[0] == 403:
+				print("You are not authorized to view/edit permissions for this roleset")
 
 		async def guest(self,**kwargs):
 			groupid = self.Groups_v1.groupid
