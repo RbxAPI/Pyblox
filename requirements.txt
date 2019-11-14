@@ -2,3 +2,4 @@ requests
 browser-cookie3
 asyncio
 requests_async
+beautifulsoup4
