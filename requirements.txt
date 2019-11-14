@@ -1,5 +1,5 @@
 requests
-browser-cookie3
+aiohttp
 asyncio
 requests_async
 beautifulsoup4
