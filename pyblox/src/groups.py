@@ -96,7 +96,7 @@ class Groups_v1:
 			elif response[0] == 400:
 				print("The user is invalid or does not exist")
 
-		async def allRoles(self,**kwargs):
+		async def allUserRoles(self,**kwargs):
 			userid = kwargs.get("userid",None)
 			response = await Req.request(t="GET",url=root+"/v1/users/"+str(userid)+"/groups/roles")
 			if response[0] == 200:
