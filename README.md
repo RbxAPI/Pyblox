@@ -23,3 +23,5 @@ If you would like to contribute, create a pull request with the changes you made
 - Python 3+
 
 *note: requirements should be installed automatically*
+
+*Disclaimer: when using any of the authentication features, please do not risk your account. Instead, use an alt or a secondary account to protect your main account and assets that belong to it.*
