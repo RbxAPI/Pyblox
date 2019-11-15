@@ -21,6 +21,8 @@ For users wanting a mid-stable, asynchronous-version: https://github.com/RbxAPI/
 The Roblox API updates whenever necessary and often the developers don't specify when or why these changes are taking place.
 Due to this, this repo could break at anytime. If a break does occur, please open up an issue on this repo detailing the error.
 
+``Master`` - This branch is at version ``2.4.2`` . Those with ``2.4.1`` may update to this branch without breaking changes. Addresses critical issues and is maintained. Will be uploaded to pip sometime soon.
+
 ## Installing
 There's now two ways to install Pyblox. 
 You may now do it through pip: 
