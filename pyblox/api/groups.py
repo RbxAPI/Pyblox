@@ -55,9 +55,3 @@ class Groups:
     def getGroupRoles(groupid):
         a = Http.sendRequest("https://groups.roblox.com/v1/groups/" + str(groupid) + "/roles")
         return a
-
-    # GET /Game/LuaWebService/HandleSocialRequest.ashx
-    # Returns String with role name.
-    def getUserRole(groupid, userid):
-        a = Http.sendRequest(f"https://www.roblox.com/Game/LuaWebService/HandleSocialRequest.ashx?method=GetGroupRole&playerid={userid}&groupId={groupid}")
-        return a
