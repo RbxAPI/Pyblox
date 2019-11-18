@@ -23,7 +23,8 @@ class Groups_v1:
 		self.socialLinks = self.socialLinks(self)
 		self.Wall = self.Wall(self)
 		self.Roles = self.Roles(self)
-
+	
+	# Url : "https://groups.roblox.com/v1/groups/{grouid}
 	async def get(self,**kwargs):
 		groupid = self.groupid
 		fetchObject = kwargs.get("Object",None)
@@ -38,7 +39,8 @@ class Groups_v1:
 
 			elif result != None and not fetchObject:
 				return result
-
+	
+	# Url : "https://groups.roblox.com/v1/groups/{groupid}/payouts"
 	async def payoutsInfo(self,**kwargs):
 		groupid = self.groupid
 		response = await Req.request(t="GET",url=root+"/v1/groups/"+str(groupid)+"/payouts")
@@ -50,11 +52,16 @@ class Groups_v1:
 			print("You don't have permission to view this group's payouts")
 		else:
 			return json.loads(response[1].decode('utf-8'))
-
+	# Url : "https://groups.roblox.com/v1
 	#def relationship(**kwargs): # Requires token validation
+	
+	# Url : "https://groups.roblox.com/v1
 	#def relationshipRequests(): # Requires token validation
+
+	# Url : "https://groups.roblox.com/v1
 	#def create(): # Requires token validation
 	
+	# Url : "https://groups.roblox.com/v1/groups/metdata"
 	async def metadata(self):
 		response = await Req.request(t="GET",url=root+"/v1/groups/metadata")
 		if response[0] == 200:
@@ -68,7 +75,8 @@ class Groups_v1:
 
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
-
+			
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/membership
 		async def get(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			response = await Req.request(t="GET",url=root+"/v1/groups/"+str(groupid)+"/membership")
@@ -77,6 +85,7 @@ class Groups_v1:
 			elif response[0] == 400:
 				print("The group is invalid or does not exist")
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/roles
 		async def roles(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			response = await Req.request(t="GET",url=root+"/v1/groups/"+str(groupid)+"/roles")
@@ -88,6 +97,7 @@ class Groups_v1:
 		#def role(**kwargs): # Doesn't work for some odd reason
 		#def pending(**kwargs): # Requires token validation
 
+		# Url : "https://groups.roblox.com/v1/users/{userid}/group-membership-status
 		async def status(self,**kwargs):
 			userid = kwargs.get("userid",None)
 			response = await Req.request(t="GET",url=root+"/v1/users/"+str(userid)+"/group-membership-status")
@@ -96,6 +106,7 @@ class Groups_v1:
 			elif response[0] == 400:
 				print("The user is invalid or does not exist")
 
+		# Url : "https://groups.roblox.com/v1/users/{userid}/groups/roles
 		async def allUserRoles(self,**kwargs):
 			userid = kwargs.get("userid",None)
 			response = await Req.request(t="GET",url=root+"/v1/users/"+str(userid)+"/groups/roles")
@@ -104,6 +115,7 @@ class Groups_v1:
 			elif response[0] == 400:
 				print("The user is invalid or does not exist")
 
+		# Url : "https://groups.roblox.com/groups/{groupid}/joinrequests-html?pageNum=1
 		async def getJoinRequests(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			response = await Req.request(t='GET', url='https://www.roblox.com/groups/'+str(groupid)+'/joinrequests-html?pageNum=1')
@@ -124,6 +136,7 @@ class Groups_v1:
 				})
 			return requests
 
+		# Url : "https://groups.roblox.com/group/handle-join-request
 		async def declineJoinRequest(self,**kwargs):
 			requestid = kwargs.get('requestid', None)
 			url = 'https://www.roblox.com/group/handle-join-request'
@@ -134,6 +147,7 @@ class Groups_v1:
 			response = await Req.request(t='POST', url=url, payload=data)
 			return response[0]
 
+		# Url : "https://groups.roblox.com/group/handle-join-request
 		async def acceptJoinRequest(self,**kwargs):
 			requestid = kwargs.get('requestid', None)
 			url = 'https://www.roblox.com/group/handle-join-request'
@@ -155,6 +169,7 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/payouts
 		async def payoutPercentages(self,**kwargs): #Doesn't work for some reason
 			groupid = kwargs.get("groupid",None)
 			cache = kwargs.get("cache",None)
@@ -176,6 +191,7 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/relationship/{groupRelationshipType}/?model.startRowIndex={startRowIndex}&model.maxRows={maxRows}
 		async def get(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			groupRelationshipType = kwargs.get("groupRelationshipType",None)
@@ -202,6 +218,7 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/roles/{rolesetid}/permissions
 		async def get(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			rolesetid = kwargs.get("rolesetid",None)
@@ -215,6 +232,7 @@ class Groups_v1:
 			elif response[0] == 403:
 				print("You are not authorized to view/edit permissions for this roleset")
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/roles/guest/permissions
 		async def guest(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			response = await Req.request(t="GET",url=root+"/v1/groups/"+str(groupid)+"/roles/guest/permissions")
@@ -228,6 +246,7 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/social-links
 		async def get(self,**kwargs): # Authorization denied for this request
 			groupid = self.Groups_v1.groupid
 			response = await Req.request(t="GET",url=root+"/v1/groups/"+str(groupid)+"/social-links")
@@ -251,6 +270,7 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/wall/posts?sortOrder=Asc&limit=10
 		async def getNextCursor(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			cursor = kwargs.get("cursor",None)
@@ -261,6 +281,7 @@ class Groups_v1:
 				else:
 					return None
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/wall/posts?sortOrder=Asc&limit=10
 		async def get(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			cursor = kwargs.get("cursor",None)
@@ -281,6 +302,7 @@ class Groups_v1:
 				elif response[0] == 403:
 					print("You do not have permission to access this group wall")
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/wall/posts
 		async def post(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			body = kwargs.get("body",None)
@@ -296,6 +318,7 @@ class Groups_v1:
 			elif response[0] == 429:
 				print("You are posting too fast, please try again in a few minutes")
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/wall/posts/{postid}
 		async def delete(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			postid = kwargs.get("postid",None)
@@ -309,6 +332,7 @@ class Groups_v1:
 			elif response[0] == 403:
 				print("Token Validation Failed or you do not have permission to access this group wall")
 
+		# Url : "https://groups.roblox.com/v1/groups/{groupid}/wall/users/{userid}/posts
 		async def purgeDelete(self,**kwargs):
 			groupid = self.Groups_v1.groupid
 			userid = kwargs.get("userid",None)
@@ -327,6 +351,7 @@ class Groups_v1:
 		def __init__(self,Groups_v1):
 			self.Groups_v1 = Groups_v1
 
+		# Url : "https://groups.roblox.com/v1/roles/?id={roleid}
 		async def roles(self,**kwargs):
 			roleid = kwargs.get("roleid",None)
 			response = await Req.request(t="GET",url=root+"/v1/roles/?ids="+str(roleid))
