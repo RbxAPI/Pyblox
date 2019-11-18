@@ -1,6 +1,6 @@
 import asyncio
 import aiohttp
-from pyblox3 import Groups_v1
+from Pyblox.pyblox3 import Groups_v1
 
 # Instance your group as a variable
 base_group = Groups_v1(groupid="GROUPID")
