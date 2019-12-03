@@ -1,4 +1,5 @@
 from distutils.core import setup
+import setuptools
 setup(
   name = 'pyblox3',
   packages = ['pyblox', 'robloxapi.utils', 'robloxapi.classes'],
