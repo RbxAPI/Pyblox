@@ -2,7 +2,7 @@ from distutils.core import setup
 import setuptools
 setup(
   name = 'pyblox3',
-  packages = ['pyblox', 'robloxapi.utils', 'robloxapi.classes'],
+  packages = ['pyblox'],
   version = '2.4.1',
   license='MIT',       
   description = 'An API wrapper for Roblox written in Python.',
