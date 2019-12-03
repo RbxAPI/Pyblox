@@ -29,7 +29,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyblox3", # Replace with your own username
-    version="2.4.1",
+    version="3.0-beta.1",
     author="Sanjay-B (Sanjay Bhadra)",
     author_email="sanjay2003rbx@gmail.com",
     description="An API wrapper for Roblox written in Python.",
