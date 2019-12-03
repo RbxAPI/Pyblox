@@ -12,8 +12,8 @@ setup(
   Archived version. 
   ''',
   url = 'https://github.com/RbxAPI/Pyblox/tree/master',
-  author = 'Sanjay Bhadra (Sanjay-B)',                
-  author_email = 'n/a',
+  author = 'Sanjay Bhadra (Sanjay-B)',        
+  author_email = 'sanjay2003rbx@gmail.com',
   keywords = ['api', 'roblox', 'roblox-api', 'python-api', 'pyblox', 'pyblox3'],
   install_requires=['requests','beautifulsoup4==4.6.3','html5lib'], # Replace with requirements.txt
   classifiers=[
