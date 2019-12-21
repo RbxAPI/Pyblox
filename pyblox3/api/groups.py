@@ -7,11 +7,28 @@
 #
 
 from .http import Http
-from bs4 import *
-import html5lib
-import urllib.request
 import json
 
+# Group Object
+class Group:
+    Name = None
+    Id = None
+    Owner = None
+    OwnerName = None
+    OwnerId = None
+    EmblemUrl = None
+    Description = None
+    Roles = None
+    
+    def __init__(self,data):
+        self.Name = data["Name"]
+        self.Id = data["Id"]
+        self.Owner = data["Owner"]
+        self.OwnerName = data["Owner"]["Name"]
+        self.OwnerId = data["EmblemUrl"]
+        self.EmblemUrl = data["EmblemUrl"]
+        self.Description = data["Description"]
+        self.Roles = data["Roles"]
 
 class Groups:
 
@@ -27,16 +44,7 @@ class Groups:
         a = Http.sendRequest("https://api.roblox.com/groups/" + str(groupid))
         b = a.decode("utf-8")
         c = json.loads(b)
-        global Group
-        Group = lambda: None
-        Group.Name = c["Name"]
-        Group.Id = c["Id"]
-        Group.Owner = c["Owner"]
-        Group.Owner.Name = c["Owner"]["Name"]
-        Group.Owner.Id = c["Owner"]["Id"]
-        Group.EmblemUrl = c["EmblemUrl"]
-        Group.Description = c["Description"]
-        Group.Roles = c["Roles"]
+        return Group(c)
 
     # GET /groups/{groupId}/allies
     # Returns Table/Array with each ally's attributes
