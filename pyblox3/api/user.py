@@ -9,6 +9,20 @@
 from .http import Http
 import json
 
+# User Object
+class User:
+    Id = None
+    Username = None
+    AvatarUri = None
+    AvatarFinal = None
+    IsOnline = None
+    
+    def __init__(self,data):
+        self.Id = data["Id"]
+        self.Username = data["Username"]
+        self.AvatarUri = data["AvatarUri"]
+        self.AvatarFinal = data["AvatarFinal"]
+        self.IsOnline = data["IsOnline"]
 
 class Users:
 
@@ -29,14 +43,7 @@ class Users:
         a = Http.sendRequest("https://api.roblox.com/users/get-by-username?username=" + str(username))
         b = a.decode("utf-8")
         c = json.loads(b)
-        global User
-        User = lambda: None
-        User.Id = c["Id"]
-        User.Username = c["Username"]
-        User.AvatarUrl = c["AvatarUri"]
-        User.AvatarFinal = c["AvatarFinal"]
-        User.IsOnline = c["IsOnline"]
-        return User
+        return User(c)
 
     # GET https://www.roblox.com/Asset/BodyColors.ashx?userId={userId}
     # Returns Table/Array
