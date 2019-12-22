@@ -29,14 +29,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyblox3", # Replace with your own username
-    version="3.0-beta.1",
+    version="3.0-beta.2",
     author="Sanjay-B (Sanjay Bhadra)",
     author_email="sanjay2003rbx@gmail.com",
     description="An API wrapper for Roblox written in Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/RbxAPI/Pyblox/tree/master",
-    packages=setuptools.find_packages(),
+    packages=['pyblox3','pyblox3.src','pyblox3.src.util'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
