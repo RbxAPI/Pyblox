@@ -21,7 +21,7 @@ For users wanting a mid-stable, asynchronous-version: https://github.com/RbxAPI/
 The Roblox API updates whenever necessary and often the developers don't specify when or why these changes are taking place.
 Due to this, this repo could break at anytime. If a break does occur, please open up an issue on this repo detailing the error.
 
-``Master`` - This branch is at version ``2.4.2`` . Those with ``2.4.1`` may update to this branch without breaking changes. Addresses critical issues and is maintained. Will be uploaded to pip sometime soon.
+``Master`` - This branch is at version ``2.4.3`` . Those with ``2.4.1`` may update to this branch without breaking changes. Addresses critical issues and is maintained. Will be uploaded to pip sometime soon.
 
 ``nightly_build`` - Starts at version ``3.x.x`` . Those with ``2.4.1`` or ``2.4.2`` may update to this branch with breaking changes. Features a more organized and powerful version of Pyblox that predicates itself on OOP (Object Orientated Programming) and async (non-blocking method calls / instances). Working towards 100% API coverage and will be marked as master once 80% coverage is completed. Will be uploaded to pip sometime soon.
 
