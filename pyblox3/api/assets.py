@@ -9,6 +9,53 @@
 from .http import Http
 import json
 
+# Asset Object
+class Asset:
+    Name = None
+    Id = None
+    ProductId = None
+    Description = None
+    AssetTypeId = None
+    CreatorName = None
+    CreatorId = None
+    CreatorTargetId = None
+    IconImageAssetId = None
+    Created = None
+    Updated = None
+    PriceInRobux = None
+    Sales = None
+    IsNew = None
+    IsForSale = None
+    IsPublicDomain = None
+    IsLimited = None
+    IsLimitedUnique = None
+    Remaining = None
+    MinimumMembershipLevel = None
+    ContentRatingTypeId = None
+    
+    def __init__(self,data):
+        self.Name = data["Name"]
+        self.Id = data["AssetId"]
+        self.ProductId = data["ProductId"]
+        self.Description = data["Description"]
+        self.AssetTypeId = data["AssetTypeId"]
+        self.CreatorName = data["Creator"]["Name"]
+        self.CreatorId = data["Creator"]["Id"]
+        self.CreatorType = data["Creator"]["CreatorType"]
+        self.CreatorTargetId = data["Creator"]["CreatorTargetId"]
+        self.IconImageAssetId = data["IconImageAssetId"]
+        self.Created = data["Created"]
+        self.Updated = data["Updated"]
+        self.PriceInRobux = data["PriceInRobux"]
+        self.Sales = data["Sales"]
+        self.IsNew = data["IsNew"]
+        self.IsForSale = data["IsForSale"]
+        self.IsPublicDomain = data["IsPublicDomain"]
+        self.IsLimited = data["IsLimited"]
+        self.IsLimitedUnique = data["IsLimitedUnique"]
+        self.Remaining = data["Remaining"]
+        self.MinimumMembershipLevel = data["MinimumMembershipLevel"]
+        self.ContentRatingTypeId = data["ContentRatingTypeId"]
 
 class Assets:
 
@@ -25,8 +72,7 @@ class Assets:
     # GET https://api.roblox.com/Ownership/HasAsset?userId={userId}&assetId={assetId}
     # Returns Boolean
     def hasAsset(userid, assetid):
-        a = Http.sendRequest(
-            "https://api.roblox.com/Ownership/HasAsset?userId=" + str(userid) + "&assetId=" + str(assetid))
+        a = Http.sendRequest("https://api.roblox.com/Ownership/HasAsset?userId=" + str(userid) + "&assetId=" + str(assetid))
         if a == "true" or True:
             return True
         else:
@@ -38,31 +84,7 @@ class Assets:
         c = Http.sendRequest("https://api.roblox.com/Marketplace/ProductInfo?assetId=" + str(assetid))
         b = c.decode("utf-8")
         a = json.loads(b)
-        global Asset
-        Asset = lambda: None
-        Asset.Name = a["Name"]
-        Asset.Id = a["AssetId"]
-        Asset.ProductId = a["ProductId"]
-        Asset.Description = a["Description"]
-        Asset.AssetTypeId = a["AssetTypeId"]
-        Asset.CreatorName = a["Creator"]["Name"]
-        Asset.CreatorId = a["Creator"]["Id"]
-        Asset.CreatorType = a["Creator"]["CreatorType"]
-        Asset.CreatorTargetId = a["Creator"]["CreatorTargetId"]
-        Asset.IconImageAssetId = a["IconImageAssetId"]
-        Asset.Created = a["Created"]
-        Asset.Updated = a["Updated"]
-        Asset.PriceInRobux = a["PriceInRobux"]
-        Asset.Sales = a["Sales"]
-        Asset.IsNew = a["IsNew"]
-        Asset.IsForSale = a["IsForSale"]
-        Asset.IsPublicDomain = a["IsPublicDomain"]
-        Asset.IsLimited = a["IsLimited"]
-        Asset.IsLimitedUnique = a["IsLimitedUnique"]
-        Asset.Remaining = a["Remaining"]
-        Asset.MinimumMembershipLevel = a["MinimumMembershipLevel"]
-        Asset.ContentRatingTypeId = a["ContentRatingTypeId"]
-        return Asset
+        return Asset(a)
 
     # GET https://www.roblox.com/studio/plugins/info?assetId={assetId}
     # Returns Table/Array
