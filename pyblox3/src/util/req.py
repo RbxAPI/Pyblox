@@ -57,7 +57,7 @@ class Req:
 		response = Req.request(t="POST",url"http://httpbin.org/post",payload=data)[0]
 	'''
 
-	async def request(t=str,url=str,*args,**kwargs):
+	async def request(self,t=str,url=str,*args,**kwargs):
 		payload = kwargs.get('payload',None)
 		header = kwargs.get('header',{})
 		cookies = kwargs.get('cookies',None)
@@ -74,21 +74,7 @@ class Req:
 			# resend request with xcsrf token
 			if statusCode == 403 and 'X-CSRF-TOKEN' in headers:
 				kwargs['headers']['X-CSRF-TOKEN'] = headers['X-CSRF-TOKEN']
-				return request(t=t, url=url, *args, **kwargs)
+				return await request(t=t, url=url, *args, **kwargs)
 
 			# if there is no xcsrf token in reponse headers or it is not required then return the response
-			return statusCode, content, headers, encoding, json
-
-
-		elif t == 'BLANK_POST':
-			request = await requests.post(str(url),headers=header)
-			statusCode = request.status_code
-			content = request.content
-			headers = request.headers
-			encoding = request.encoding
-			json = request.json()
-			return statusCode,content,headers,encoding,json
-
-		elif t == "DOUBLE_POST":
-			pass
-
+			return await statusCode, content, headers, encoding, json
