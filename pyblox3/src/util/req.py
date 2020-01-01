@@ -9,22 +9,9 @@
 import asyncio
 import requests_async as requests
 import json
-import browser_cookie3
-# from .strings import Strings
 
-try:
-	cookies = list(browser_cookie3.chrome())
-except browser_cookie3.BrowserCookieError:
-	print('Unable to get cookies.')
 
 class Req:
-
-	async def getAllCookies():
-		#return cookies
-		session = requests.Session()
-		response = await session.get("https://www.roblox.com/home")
-		print(session.cookies.get_dict())
-
 
 	'''
 	@method 

@@ -12,6 +12,5 @@
 
 # Parent Class Modules
 from .req import Req
-from .strings import Strings
-from .jsoni import Jsoni
+from .io import io
 from .cached import Cached
