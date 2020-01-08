@@ -14,8 +14,8 @@ class Friends:
 
     # GET /users/{userId}/friends
     # Returns Table/Array containing the Username of all your friends
-    def friendList(id):
-        a = Http.sendRequest("https://api.roblox.com/users/" + str(id) + "/friends")
+    def friendList(id, page):
+        a = Http.sendRequest("https://api.roblox.com/users/" + str(id) + "/friends?page=" + str(page))
         b = a.decode("utf-8")
         c = json.loads(b)
         result = []
