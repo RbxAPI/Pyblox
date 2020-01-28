@@ -66,7 +66,7 @@ class Req:
 
 		if t == "GET" or "POST" or "PATCH" or "DEL":
 			method = t.replace('DEL', 'delete')
-			# response = await requests.request("POST", "https://www.roblox.com/authentication/signoutfromallsessionsandreauthenticate", data=None, headers=header, cookies=cookies or {})
+			response = await requests.request("POST", "https://www.roblox.com/authentication/signoutfromallsessionsandreauthenticate", data=None, headers=header, cookies=cookies or {})
 			header['X-CSRF-TOKEN'] = response.headers['X-CSRF-TOKEN']
 			request = await requests.request(method, str(url), data=payload or None, headers=header, cookies=cookies)
 			statusCode = request.status_code
