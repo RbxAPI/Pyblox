@@ -66,7 +66,7 @@ class Req:
 
 		if t == "GET" or "POST" or "PATCH" or "DEL":
 			method = t.replace('DEL', 'delete')
-			response = await requests.request("POST", "https://www.roblox.com/authentication/signoutfromallsessionsandreauthenticate", data=None, headers=header, cookies=cookies or {})
+			# response = await requests.request("POST", "https://www.roblox.com/authentication/signoutfromallsessionsandreauthenticate", data=None, headers=header, cookies=cookies or {})
 			header['X-CSRF-TOKEN'] = response.headers['X-CSRF-TOKEN']
 			request = await requests.request(method, str(url), data=payload or None, headers=header, cookies=cookies)
 			statusCode = request.status_code
@@ -77,8 +77,8 @@ class Req:
 
 			# resend request with xcsrf token
 			if statusCode == 403 and 'X-CSRF-TOKEN' in headers:
-				kwargs['headers']['X-CSRF-TOKEN'] = headers['X-CSRF-TOKEN']
+				kwargs['header']['X-CSRF-TOKEN'] = headers['X-CSRF-TOKEN']
 				return await request(t=t, url=url, *args, **kwargs)
 				
-			# if there is no xcsrf token in reponse headers or it is not required then return the response
+			# if there is no xcsrf token in response headers or it is not required then return the response
 			return statusCode, content, headers, encoding, json
