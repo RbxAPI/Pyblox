@@ -13,6 +13,8 @@ import json
 
 class Req:
 
+	token = None
+
 	'''
 	@method 
 		request(t=String,url=String,*args,**kwargs)
@@ -57,14 +59,16 @@ class Req:
 		response = Req.request(t="POST",url"http://httpbin.org/post",payload=data)[0]
 	'''
 
-	async def request(self,t=str,url=str,*args,**kwargs):
+	async def request(t=str,url=str,*args,**kwargs):
 		payload = kwargs.get('payload',None)
 		header = kwargs.get('header',{})
-		cookies = kwargs.get('cookies',None)
+		cookies = kwargs.get('cookies',{})
 
 		if t == "GET" or "POST" or "PATCH" or "DEL":
 			method = t.replace('DEL', 'delete')
-			request = await requests.request(method, str(url), data=payload or None, headers=header, cookies=cookies or {})
+			response = await requests.request("POST", "https://www.roblox.com/authentication/signoutfromallsessionsandreauthenticate", data=None, headers=header, cookies=cookies or {})
+			header['X-CSRF-TOKEN'] = response.headers['X-CSRF-TOKEN']
+			request = await requests.request(method, str(url), data=payload or None, headers=header, cookies=cookies)
 			statusCode = request.status_code
 			content = request.content
 			headers = request.headers
@@ -75,6 +79,6 @@ class Req:
 			if statusCode == 403 and 'X-CSRF-TOKEN' in headers:
 				kwargs['headers']['X-CSRF-TOKEN'] = headers['X-CSRF-TOKEN']
 				return await request(t=t, url=url, *args, **kwargs)
-
+				
 			# if there is no xcsrf token in reponse headers or it is not required then return the response
-			return await statusCode, content, headers, encoding, json
+			return statusCode, content, headers, encoding, json
