@@ -35,7 +35,7 @@ setuptools.setup(
     description="An API wrapper for Roblox written in Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/RbxAPI/Pyblox/tree/master",
+    url="https://github.com/RbxAPI/Pyblox/tree/nightly_build",
     packages=['pyblox3','pyblox3.src','pyblox3.src.util'],
     classifiers=[
         "Programming Language :: Python :: 3",
