@@ -10,7 +10,7 @@ import json
 import os
 import inspect
 
-class Jsoni:
+class io:
 
 	def read(**kwargs):
 		file = kwargs.get("file",None)
