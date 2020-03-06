@@ -79,6 +79,8 @@ class Req:
 			if statusCode == 403 and 'X-CSRF-TOKEN' in headers:
 				kwargs['headers']['X-CSRF-TOKEN'] = headers['X-CSRF-TOKEN']
 				return await request(t=t, url=url, *args, **kwargs)
-				
-			# if there is no xcsrf token in reponse headers or it is not required then return the response
-			return statusCode, content, headers, encoding, json
+
+			if statusCode == 200:
+				return statusCode, content, headers, encoding, json
+			else:
+				return statusCode, content, headers, encoding, json["errors"][0]
