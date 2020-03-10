@@ -15,7 +15,8 @@ If you would like to contribute, create a pull request with the changes you made
 
 For users wanting a Python 2x-compatible version: https://github.com/RbxAPI/Pyblox/tree/python2
 
-For users wanting a mid-stable, asynchronous-version: https://github.com/RbxAPI/Pyblox/tree/nightly_build
+For users wanting a mid-stable, asynchronous-version (will replace the master branch once 80% API coverage is achieved): https://github.com/RbxAPI/Pyblox/tree/nightly_build
+
 ### Updating
 
 The Roblox API updates whenever necessary and often the developers don't specify when or why these changes are taking place.
