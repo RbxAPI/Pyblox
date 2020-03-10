@@ -42,14 +42,11 @@ Please note that the "Clone" method is regulary updated. However, the pip-versio
 
 ## Quick Example
 
-```py
+```python
 from pyblox3 import Friends # Imports the Friends class from pyblox wrapper 
 
-def GetAllFriends():
-	CoolPeople = Friends.friendList(1) # Takes your userid
-	print(CoolPeople) # Returns usernames and prints them in the console
-
-GetAllFriends() # Calls "GetAllFriends" method
+CoolPeople = Friends.friendList(1, 1) # Takes your userid and page number
+print(CoolPeople) # Returns usernames and prints them in the console
 ```
 
 ## Requirements
