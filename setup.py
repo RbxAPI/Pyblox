@@ -28,8 +28,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pyblox3", # Replace with your own username
-    version="3.0-beta.3",
+    name="pyblox3",
+    version="3.0-beta.4",
     author="Sanjay-B (Sanjay Bhadra)",
     author_email="sanjay2003rbx@gmail.com",
     description="An API wrapper for Roblox written in Python.",
