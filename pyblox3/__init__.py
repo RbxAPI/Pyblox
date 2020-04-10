@@ -16,6 +16,7 @@ __copyright__ = 'Copyright © 2018- Sanjay-B(Sanjay Bhadra)'
 
 # Parent Class Modules
 from .src.groups import *
+from .src.users import *
 from .src.auth import *
 
 
