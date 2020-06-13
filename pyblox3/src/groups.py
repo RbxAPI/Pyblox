@@ -18,6 +18,7 @@ class Groups_v1:
 		self.auth = auth.auth_cookies
 		self.Membership = self.Membership(self)
 		self.Revenue = self.Revenue(self)
+		self.Relationships = self.Relationships(self)
 		self.Permissions = self.Permissions(self)
 		self.socialLinks = self.socialLinks(self)
 		self.Wall = self.Wall(self)
