@@ -376,7 +376,7 @@ class Groups_v1:
 			startRowIndex = kwargs.get("startRowIndex", 1)
 			maxRows = kwargs.get("maxRows", 1)
 			response = await Req.request(t="GET", url=f'https://groups.roblox.com/v1/groups/{groupid}/relationships/{groupRelationshipType}?model.startRowIndex={startRowIndex}&model.maxRows={maxRows}', cookies=auth)
-			response[4]
+			return response[4]
 		
 		# DELETE : "https://groups.roblox.com/v1/groups/{groupId}/relationships/{groupRelationshipType}/requests"
 		# Docs : https://groups.roblox.com/docs#!/Relationships/delete_v1_groups_groupId_relationships_groupRelationshipType_requests
