@@ -18,6 +18,14 @@ class AbTesting_v1:
         self.auth = auth.auth_cookies
 
     # POST https://abtesting.roblox.com/v1/get-enrollments
+    '''
+        OK, it should consist of an array of these:
+        {
+            "ExperimentName": "SomeABTest",
+            "SubjectType": int,
+            "SubjectTargetId": int64,
+        }
+    '''
     async def getEnrollments(self,
                              **kwargs):
         auth = self.auth
@@ -25,7 +33,8 @@ class AbTesting_v1:
         response = await Req.request(t='POST',
                                      url='https://abtesting.roblox.com/v1/get-enrollments',
                                      auth=auth,
-                                     payload=request)
+                                     payload=request,
+                                     header={'Content-Type': 'application/json'})
         if response[0] == 200:
             return response[4]
         else:
