@@ -18,6 +18,8 @@ __copyright__ = 'Copyright © 2019- Sanjay-B(Sanjay Bhadra)'
 from .src.groups import *
 from .src.users import *
 from .src.auth import *
+from .src.abtesting import *
+from .src.accountInformation import *
 
 
 
