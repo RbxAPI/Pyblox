@@ -2,12 +2,9 @@
 # abtesting.py
 # pyblox
 #
-# By NSG (Nikita Petko) and IvanG (Ivan Gregrovnich)
-# Copyright © 2015-2020 MFD. All rights reserved.
+# By NSG (Nikita Petko) and IvanG (Ivan Gregrovnich) with Sanjay-B(Sanjay Bhadra)
+# Copyright © 2019- Sanjay-B with MFD. All rights reserved.
 #
-
-# TODO Consider removing my existence
-# FIXME The awful code below.
 
 from .util import *
 
@@ -20,8 +17,8 @@ class AbTesting_v1:
         auth = kwargs.get("auth", None)
         self.auth = auth.auth_cookies
 
-    # POST https://abtesting.roblox.com/v1/get-enrollments
-    # Docs unknown
+    # POST : https://abtesting.roblox.com/v1/get-enrollments
+    # Docs : n/a
     async def getEnrollments(self,
                              **kwargs):
         global root
