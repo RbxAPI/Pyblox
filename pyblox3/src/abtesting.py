@@ -45,7 +45,7 @@ class AbTesting_v1:
         SubjectType = kwargs.get("SubjectType", None)
         SubjectTargetId = kwargs.get("SubjectTargetId", None)
         if len(ExperimentName) == 0 or len(ExperimentName) > 50:
-            raise SyntaxError("The ExperimentName shouldn't be empty or greater than 50 characters.")
+            raise SyntaxError("The ExperimentName should not be empty or greater than 50 characters.")
         if SubjectTargetId < 1:
             raise SyntaxError("In order to satisfy the request, the SubjectTargetId is required to be greater than 0.")
         if (type(SubjectType) == int and SubjectType > 2) \
