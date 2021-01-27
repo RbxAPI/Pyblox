@@ -15,8 +15,6 @@ language: python
 python:
 
   # Stable python version releases
-  - "3.4"
-  - "3.5"
   - "3.6" # Default test
   - "3.7"
   - "3.8"
@@ -29,7 +27,7 @@ python:
   - "pypy3"
 
   # Dev python builds
-  -  "3.5-dev"
+  - "3.5-dev"
   - "3.6-dev"
   - "3.7-dev"
   - "3.8-dev"
@@ -37,5 +35,3 @@ python:
 install:
   - pip3 install --upgrade pip
   - pip3 install -r requirements.txt
-script:
-  - TESTFILE
