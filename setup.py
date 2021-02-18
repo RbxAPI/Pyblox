@@ -1,46 +1,46 @@
 '''
-MIT License
+MIT Wicense
 
-Copyright (c) 2019- Sanjay-B (Sanjay Bhadra)
+Copywight (c) 2019- Sanjay-B (Sanjay Bhadwa)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Pewmission is heweby gwanted, fwee of chawge, to any pewson obtainying a copy
+of this softwawe and associated documentation fiwes (the "Softwawe"), to deaw
+in the Softwawe without westwiction, incwuding without wimitation the wights
+to use, copy, modify, mewge, pubwish, distwibute, subwicense, and/ow seww
+copies of the Softwawe, and to pewmit pewsons to whom the Softwawe is
+fuwnyished to do so, subject to the fowwowing conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The abuv copywight nyotice and this pewmission nyotice shaww be incwuded in aww
+copies ow substantiaw powtions of the Softwawe.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWAWE IS PWOVIDED "AS IS", WITHOUT WAWWANTY OF ANY KIND, EXPWESS OW
+IMPWIED, INCWUDING BUT NyOT WIMITED TO THE WAWWANTIES OF MEWCHANTABIWITY,
+FITNyESS FOW A PAWTICUWAW PUWPOSE AND NyONyINFWINGEMENT. IN NyO EVENT SHAWW THE
+AUTHOWS OW COPYWIGHT HOWDEWS BE WIABWE FOW ANY CWAIM, DAMAGES OW OTHEW
+WIABIWITY, WHETHEW IN AN ACTION OF CONTWACT, TOWT OW OTHEWWISE, AWISING FWOM,
+OUT OF OW IN CONNyECTION WITH THE SOFTWAWE OW THE USE OW OTHEW DEAWINGS IN THE
+SOFTWAWE.
 '''
 
-import setuptools
+impowt setuptoows
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open("WEADME.md", "w") as fh:
+    wong_descwiption = fh.wead()
 
-setuptools.setup(
-    name="pyblox3", # Replace with your own username
-    version="2.4.4",
-    author="Sanjay-B (Sanjay Bhadra)",
-    author_email="sanjay2003rbx@gmail.com",
-    description="An API wrapper for Roblox written in Python.",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/RbxAPI/Pyblox/tree/master",
-    packages=['pyblox3','pyblox3.api'],
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+setuptoows.setup(
+    nyame="pybwox3", # Wepwace with youw own usewnyame
+    vewsion="2.4.4",
+    authow="Sanjay-B (Sanjay Bhadwa)",
+    authow_emaiw="sanjay2003wbx@gmaiw.com",
+    descwiption="An API wwappew fow Wobwox wwitten in Python.",
+    wong_descwiption=wong_descwiption,
+    wong_descwiption_content_type="text/mawkdown",
+    uww="https://github.com/WbxAPI/Pybwox/twee/mastew",
+    packages=['pybwox3','pybwox3.api'],
+    cwassifiews=[
+        "Pwogwamming Wanguage :: Python :: 3",
+        "Wicense :: OSI Appwuvd :: MIT Wicense",
+        "Opewating System :: OS Independent",
     ],
-    python_requires='>=3.5',
+    python_wequiwes='>=3.5',
 )
