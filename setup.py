@@ -1,7 +1,7 @@
 '''
 MIT License
 
-Copyright (c) 2019- Sanjay-B (Sanjay Bhadra)
+Copyright (c) 2021- Sanjay-B (Sanjay Bhadra)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyblox3",
-    version="3.0-beta.4",
+    version="3.0-beta.5",
     author="Sanjay-B (Sanjay Bhadra)",
     author_email="sanjay2003rbx@gmail.com",
     description="An API wrapper for Roblox written in Python.",
@@ -42,5 +42,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.5',
+    python_requires='>=3.6',
 )

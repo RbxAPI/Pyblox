@@ -1,5 +1,4 @@
-requests
 aiohttp
 asyncio
 requests_async
-beautifulsoup4
+pytest
