@@ -9,6 +9,10 @@
 # Copyright 2002-2021 MFD Corporation, All Rights Reserved.
 #
 
+root = "https://gamepersistence.roblox.com" if not G_ACC_NO_PROD else "https://gamepersistence.sitetest4.robloxlabs.com"
+rootapi = "https://gamepersistence.api.sitetest4.robloxlabs.com"
+apiKey = "90F4CB19-A650-45C0-82E6-F2EC82BA0050"
+
 class GamePersistence_NoOpt:
     def __init__(self, **kwargs):
         auth = kwargs.get("auth", None)
