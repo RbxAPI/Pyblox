@@ -6,7 +6,7 @@
 #  Copyright © 2019- Sanjay-B(Sanjay Bhadra). All rights reserved.
 #
 
-from pyblox import *
+from pyblox3 import *
 import asyncio
 
 
