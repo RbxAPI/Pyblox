@@ -26,16 +26,16 @@ class User:
 
 class Users:
 
-    # GET https://www.roblox.com/UserCheck/DoesUsernameExist?username={username}
+    # GET https://api.roblox.com/users/get-by-username?username={username}
     # Returns Boolean
+    
     def checkUsernameExists(username):
-        a = Http.sendRequest("https://www.roblox.com/UserCheck/DoesUsernameExist?username=" + str(username))
-        b = a.decode("utf-8")
-        c = json.loads(b)
-        if c["success"] == "True" or True:
-            return True
-        else:
+        a = Http.sendRequest("https://api.roblox.com/users/get-by-username?username=" + str(username))
+        if a is None:
             return False
+        else:
+            return True
+
 
     # GET https://api.roblox.com/users/get-by-username?username={username}
     # Returns Table/Array + Attributes
