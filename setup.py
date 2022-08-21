@@ -41,6 +41,11 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: CGI Tools/Libraries",
+        "Topic :: Software Development :: Libraries"
+    ],
+    install_requires=[
+            "requests>=2.25.1"
     ],
     python_requires='>=3.5',
 )
