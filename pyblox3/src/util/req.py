@@ -8,8 +8,6 @@
 
 import httpx
 
-
-
 class HttpError(Exception):
 	"""
 	Base class that represents an HTTP Error in the form of an exception.
