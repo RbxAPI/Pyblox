@@ -7,7 +7,8 @@
 #
 
 from .util import *
-import json
+
+Req = Req()
 
 class Games_v1:
 
