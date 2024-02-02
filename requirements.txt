@@ -1,4 +1,4 @@
 aiohttp
 asyncio
-requests_async
+httpx
 pytest
