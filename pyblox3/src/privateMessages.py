@@ -7,7 +7,8 @@
 #
 
 from .util import *
-import json
+
+Req = Req()
 
 class privateMessages_v1:
 

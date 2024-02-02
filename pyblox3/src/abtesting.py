@@ -10,6 +10,7 @@ from .util import *
 
 root = "https://abtesting.roblox.com"
 
+Req = Req()
 
 class AbTesting_v1:
 

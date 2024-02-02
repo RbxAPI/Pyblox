@@ -7,8 +7,8 @@
 #
 
 from .util import *
-import json
-import requests
+
+Req = Req()
 
 root = "https://auth.roblox.com"
 
