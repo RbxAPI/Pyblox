@@ -2,15 +2,14 @@
 #  TESTFILE.py
 #  pyblox
 #
-#  By Sanjay-B(Sanjay Bhadra)
-#  Copyright © 2019- Sanjay-B(Sanjay Bhadra). All rights reserved.
+#  By sbhadr (Sanjay Bhadra)
+#  Copyright © 2024- sbhadr (Sanjay Bhadra). All rights reserved.
 #
 # This file does can be deleted w/o any issues to source.
 # 
 
 import asyncio
-import aiohttp
-from pyblox3 import Auth_v2, Groups_v1
+from src import Auth_v2, Groups_v1
 
 test_data = {
   "isApprovalRequired": False,
@@ -23,7 +22,7 @@ test_data = {
 # Instance your auth details
 base_bot_user = Auth_v2(cookies={'.ROBLOSECURITY': "YourCookie"})
 # Instance your group as a variable
-base_group = Groups_v1(groupid=5265464,auth=base_bot_user)
+base_group = Groups_v1(groupid=7,auth=base_bot_user)
 
 # Standard Event Loop
 async def event_loop():

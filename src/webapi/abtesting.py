@@ -2,11 +2,11 @@
 # abtesting.py
 # pyblox
 #
-# By NSG (Nikita Petko) and IvanG (Ivan Gregrovnich) with Sanjay-B(Sanjay Bhadra)
-# Copyright © 2019- Sanjay-B with MFD. All rights reserved.
+# By NSG (Nikita Petko) and IvanG (Ivan Gregrovnich) with sbhadr (Sanjay Bhadra)
+# Copyright © 2024- sbhadr with MFD. All rights reserved.
 #
 
-from .util import *
+from .util import Req
 
 root = "https://abtesting.roblox.com"
 

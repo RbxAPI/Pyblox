@@ -2,13 +2,9 @@
 #  auth.py
 #  pyblox
 #
-#  By Sanjay-B(Sanjay Bhadra)
-#  Copyright © 2019- Sanjay-B(Sanjay Bhadra). All rights reserved.
+#  By sbhadr (Sanjay Bhadra)
+#  Copyright © 2024- sbhadr (Sanjay Bhadra). All rights reserved.
 #
-
-from .util import *
-
-Req = Req()
 
 root = "https://auth.roblox.com"
 
