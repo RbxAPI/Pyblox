@@ -29,10 +29,9 @@ If you would like to contribute, create a pull request with the changes you made
 
 # Requirements
 
-- Python 3.6+ / 3.6-dev+ or PyPy3
-- aiohttp
+- Python 3.8+ / 3.8-dev+ or PyPy3
 - asyncio
-- requests_async
+- httpx
 - pytest
 
 > **Notice:** Requirements should be installed automatically via pip.
@@ -51,7 +50,7 @@ If you would like to contribute, create a pull request with the changes you made
 - Async Compatible (default)
 - Supports MacOS, Windows, Linux, Raspbian
 - Should be able to work on PyPy3
-- Will not work on Python 2.x.x or any version below Python 3.6
+- Will not work on Python 2.x.x or any version below Python 3.8
 - Works with Discord.py & other Python-based discord libraries
 - Only works via cookie login; does not support username and password authentication
 
