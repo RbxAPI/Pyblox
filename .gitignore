@@ -3,3 +3,4 @@ notes.txt
 *.pyc
 **/__pycache__
 .vscode
+.dist

@@ -2,8 +2,10 @@
 #  examples -> login.py
 #  pyblox
 #
-#  By Sanjay-B(Sanjay Bhadra)
-#  Copyright © 2019- Sanjay-B(Sanjay Bhadra). All rights reserved.
+#  By sbhadr (Sanjay Bhadra)
+#  Copyright © 2024- sbhadr (Sanjay Bhadra). All rights reserved.
+#  THIS DOES NOT WORK. Roblox removed the ability for bots to login traditionally.
+#  Use an account cookie or opencloud instead.
 #
 
 from pyblox3 import *

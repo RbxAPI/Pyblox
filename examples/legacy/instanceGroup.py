@@ -1,5 +1,4 @@
 import asyncio
-import aiohttp
 from pyblox3 import Groups_v1
 
 # Instance your group as a variable

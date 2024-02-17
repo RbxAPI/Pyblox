@@ -2,11 +2,11 @@
 #  users.py
 #  pyblox
 #
-#  By Sanjay-B(Sanjay Bhadra)
-#  Copyright © 2020- Sanjay-B(Sanjay Bhadra). All rights reserved.
+#  By sbhadr (Sanjay Bhadra)
+#  Copyright © 2024- sbhadr (Sanjay Bhadra). All rights reserved.
 #
 
-from .util import *
+from .util import Req
 
 Req = Req()
 
