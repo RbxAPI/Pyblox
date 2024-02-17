@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyblox3"
+version = "3.0-beta.6"
+authors = [
+    { name="Sanjay Bhadra", email="sbhadr.github@gmail.com" }
+]
+description = "An API wrapper for Roblox written in Python"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "aiohttp",
+    "asyncio",
+    "httpx",
+    "pytest"
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13"
+]
+keywords = [
+    "Python", "Roblox", "API", "Wrapper", "Library", "Python3", "API-Wrapper", "RobloxDev", 
+    "Roblox-API", "Game Development", "Automation", "Scripting", "HTTP Requests", 
+    "JSON", "Authentication", "User Management", "Asset Management", "Game Analytics", 
+    "Server Communication", "Data Parsing", "Web Scraping", "Multiplayer Games", 
+    "Community Engagement", "Player Data", "Game Sessions", "Inventory Management", "Platform Integration", 
+    "Cloud Services", "Social Features", "Development Tools", "Content Creation", "Security", 
+    "Rate Limiting", "Error Handling", "Open Source", "Collaboration", "Version Control", 
+    "Documentation", "Tutorials", "User Support", "Performance Optimization", "Cross-platform", 
+    "Event Handling", "Asynchronous Programming", "Dependency Management", "Unit Testing", 
+    "Continuous Integration", "Deployment", "Community Contributions", "Licensing"
+]
+
+[project.urls]
+Repository = "https://github.com/RbxAPI/Pyblox/tree/nightly_build"
+Issues = "https://github.com/RbxAPI/Pyblox/issues"
+Source = "https://github.com/RbxAPI/Pyblox"
+Discord = "https://discord.com/invite/EDXNdAT"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src",
+    "pyblox3.webapi",
+    "pyblox3.webapi.util"
+]
